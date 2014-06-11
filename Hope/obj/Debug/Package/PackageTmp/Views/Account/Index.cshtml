@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "微心愿登陆";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<h2>登录</h2>
+<center>
+<form action="/account/index" method="post">
+	<div class="section">
+		<div class="row">
+			<label>用户名：</label>
+			<input type="text" name="userID" />
+		</div>
+		<div class="row">
+			<label>密码：</label>
+			<input type="password" name="password" />
+		</div>
+		<div class="row">
+			<p>@ViewBag.LoginError</p>
+			<button type="submit">登录</button>
+		</div>
+	</div>
+</form>
+</center>

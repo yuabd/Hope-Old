@@ -1,0 +1,12 @@
+D:\Code\JuYi\代码\项目\公安\Hope-Old\Hope\bin\Hope.dll
+D:\Code\JuYi\代码\项目\公安\Hope-Old\Hope\bin\Hope.pdb
+D:\Code\JuYi\代码\项目\公安\Hope-Old\Hope\bin\EntityFramework.dll
+D:\Code\JuYi\代码\项目\公安\Hope-Old\Hope\obj\Debug\Hope.dll
+D:\Code\JuYi\代码\项目\公安\Hope-Old\Hope\obj\Debug\Hope.pdb
+D:\Github\Activity\Hope-Old\Hope\bin\Hope.dll
+D:\Github\Activity\Hope-Old\Hope\bin\Hope.pdb
+D:\Github\Activity\Hope-Old\Hope\bin\EntityFramework.dll
+D:\Github\Activity\Hope-Old\Hope\obj\Debug\Hope.csprojResolveAssemblyReference.cache
+D:\Github\Activity\Hope-Old\Hope\obj\Debug\Hope.dll
+D:\Github\Activity\Hope-Old\Hope\obj\Debug\Hope.pdb
+D:\Code\JuYi\代码\项目\公安\Hope-Old\Hope\obj\Debug\Hope.csprojResolveAssemblyReference.cache
