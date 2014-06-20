@@ -50,11 +50,27 @@
 	        });
 	    });
 
-		function apply(wishID, name, detail) {
+	    function apply(wishID, name, detail, Situation) {
 			$("#_WishID").attr("disabled", "disabled").val(wishID);
 			$("#WishID").val(wishID);
 			$("#StudentName").attr("disabled", "disabled").val(name);
 			$("#Detail").val(detail);
+			$("#Situation").val(Situation);
+            var obj = document.getElementById("form"); 
+            var W = screen.width;//取得屏幕分辨率宽度 
+            var H = screen.height;//取得屏幕分辨率高度 
+            var yScroll;//取滚动条高度 
+            if (self.pageYOffset) { 
+            yScroll = self.pageYOffset; 
+            } else if (document.documentElement && document.documentElement.scrollTop){ 
+            yScroll = document.documentElement.scrollTop; 
+            } else if (document.body) {
+            yScroll = document.body.scrollTop; 
+            } 
+            obj.style.marginLeft= (W/2 - 620) + "px";
+            obj.style.top= (H/2 - 428　+　yScroll) + "px";
+            obj.style.display="block"; 
+			
 			$("#form").show();
 		}
 	</script>
@@ -93,6 +109,10 @@
 			<div class="row">
 				<label>联系电话：</label>
 				<input type="text" id="ContactTel" name="ContactTel" class="large"/><cite>*</cite>
+			</div>
+            <div class="row">
+				<label>家庭情况：</label>
+				<textarea id="Situation" cols="" rows="" disabled="disabled" style="width: 170px;height:40px;"></textarea>
 			</div>
 		</div>
 		<div class="f_l">
@@ -210,7 +230,7 @@
 			<td>
 			@if (!item.IsApply)
    {
-				<a href="javascript:void(0);" onclick="apply('@item.WishID', '@item.StudentName', '@item.Detail');" class="button new-button">认领该愿望</a>
+				<a href="javascript:void(0);" onclick="apply('@item.WishID', '@item.StudentName', '@item.Detail', '@item.Situation');" class="button new-button">认领该愿望</a>
    }
    else
    {

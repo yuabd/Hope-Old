@@ -96,7 +96,7 @@ form .row
 {
 	width: 180px;
 }
-*html #form
+* html #form
 {
 	position: absolute;
 	left: 150px;
@@ -104,12 +104,10 @@ form .row
 #form
 {
 	width: 620px;
-	height: 388px;
+	height: 428px;
 	background: #fff;
 	border: 1px solid #bcbab7;
-	position: fixed;
-	top: 100px;
-	left: 350px;
+	position: absolute;
 	z-index: 100;
 	padding: 0 25px;
 	display: none;
@@ -138,7 +136,7 @@ cite
 #form-right
 {
 	width: 315px;
-	height: 175px;
+	height: 215px;
 }
 /*通用*/
 a
