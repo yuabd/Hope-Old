@@ -16,9 +16,12 @@ namespace Hope.Areas.Admin.Controllers
         //
         // GET: /Admin/Wish/
 
-        public ActionResult Index(int? page, bool? id, string StudentName, string Tel)
+        SiteDataContext db = new SiteDataContext();
+
+        public ActionResult Index(int? page, bool? id, string StudentName, string Tel, string name)
         {
             var wishes = new List<Wish>();
+            ViewBag.ID = id;
             if (id != null)
             {
                 wishes = siteService.GetWishes((bool)id).ToList();
@@ -31,14 +34,22 @@ namespace Hope.Areas.Admin.Controllers
             if (!string.IsNullOrWhiteSpace(StudentName))
             {
                 wishes = (from l in wishes
-                          where l.StudentName == StudentName
+                          where l.StudentName.Contains(StudentName)
                           select l).ToList();
             }
 
             if (!string.IsNullOrWhiteSpace(Tel))
             {
                 wishes = (from l in wishes
-                          where l.Tel == Tel
+                          where l.Tel.Contains(Tel)
+                          select l).ToList();
+            }
+
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                wishes = (from l in wishes
+                          join a in db.Applies on l.WishID equals a.WishID
+                          where a.ContactName.Contains(name)
                           select l).ToList();
             }
 

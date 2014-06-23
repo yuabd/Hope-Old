@@ -1,0 +1,35 @@
+﻿@model List<Hope.Models.PaiHang>
+@{
+    ViewBag.Title = "排行榜";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<table class="grid">
+    <tr>
+        <th>排行<br />
+            <a href="/Home/PaiHang/2014" style="color: Red;">2014年排行</a><br />
+            <a href="/Home/PaiHang/2013">2013年排行</a><br />
+        </th>
+        <th>姓名</th>
+		<th>认领次数</th>
+    </tr>
+    @{int i = 1; }
+    @foreach (var item in Model.Take(30))
+    {
+        string color = "";
+        <tr>
+            <td>
+                @if (i <= 3)
+                {
+                    color = "red";
+                }
+                
+                <span style='color: @color;'>@i</span>
+            </td>
+            <td>@item.Name</td>
+            <td><img src="/Content/images/heart.jpg" style="width: 30px;" />@item.Count</td>
+        </tr>
+        i++;
+    }
+</table>
+

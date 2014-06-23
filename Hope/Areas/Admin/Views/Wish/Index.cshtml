@@ -58,6 +58,10 @@
     <form>
         <label>姓名：</label><input type="text" name="StudentName" />
         <label>联系电话：</label><input type="text" name="Tel" />
+        @if (ViewBag.ID == true)
+        {
+            <label>认领人：</label><input type="text" name="Name" />
+        }
         <button type="submit">提交</button>
     </form>
 </fieldset>

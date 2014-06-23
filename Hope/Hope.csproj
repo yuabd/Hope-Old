@@ -122,6 +122,7 @@
     <Content Include="App_Themes\Site\nivo-slider.css" />
     <Content Include="App_Themes\Site\Style.css" />
     <Content Include="Content\images\2013052109391215.jpg" />
+    <Content Include="Content\images\heart.jpg" />
     <Content Include="Content\images\DSCF0194.jpg" />
     <Content Include="Content\images\DSCF0203.jpg" />
     <Content Include="Content\images\DSCF0208.jpg" />
@@ -185,6 +186,7 @@
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Wish\UploadExcel.cshtml" />
     <None Include="Properties\PublishProfiles\Main.pubxml" />
+    <Content Include="Views\Home\PaiHang.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

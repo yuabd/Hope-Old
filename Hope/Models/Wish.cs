@@ -33,4 +33,11 @@ namespace Hope.Models
 
 		public virtual Apply Apply { get; set; }
 	}
+
+    public class PaiHang
+    {
+        public string Name { get; set; }
+
+        public int Count { get; set; }
+    }
 }

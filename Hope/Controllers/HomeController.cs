@@ -14,9 +14,10 @@ namespace Hope.Controllers
         // GET: /Home/
 		private SiteService siteService = new SiteService();
 
-        public ActionResult Index(int? page, int? id, int? state)
+        public ActionResult Index(int? page, int? id, int? state, string name)
         {
-            var wishes = siteService.GetWishes().ToList();
+            var wishes = new List<Wish>();
+            wishes = siteService.GetWishes().ToList();
             if (id != null && id != 0)
             {
                 wishes = (from l in wishes
@@ -40,10 +41,31 @@ namespace Hope.Controllers
                 
             }
 
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                wishes = siteService.SearchWishByApplyName(name);
+            }
+
 			var pwishes = new Paginated<Wish>(wishes, page ?? 1, 20);
 
             return View(pwishes);
         }
+
+        public ActionResult PaiHang(string id)
+        {
+            var list = siteService.GetPaiHangBang(id);
+
+            return View(list);
+        }
+
+        //[HttpPost]
+        //public ActionResult Index()
+        //{
+        //    var list = siteService.SearchWishByApplyName(name);
+        //    var pwishes = new Paginated<Wish>(list, page ?? 1, 20);
+
+        //    return View();
+        //}
 
 		[HttpPost]
 		public ActionResult Apply(Apply apply)
